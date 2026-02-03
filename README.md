@@ -1,3 +1,4 @@
+![CI](https://github.com/marcellmiklosofficial/garden-tracker-api/actions/workflows/ci.yml/badge.svg)
 # Garden Sustainability Tracker API
 
 A Java + Spring Boot backend project demonstrating REST API design,
