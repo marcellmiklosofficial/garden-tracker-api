@@ -5,6 +5,7 @@ import com.marcell.garden_tracker_api.plant.Plant;
 import com.marcell.garden_tracker_api.plant.PlantRepository;
 import com.marcell.garden_tracker_api.plant.dto.PlantCreateRequest;
 import com.marcell.garden_tracker_api.plant.dto.PlantResponse;
+import com.marcell.garden_tracker_api.plant.dto.PlantUpdateRequest;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,6 +35,24 @@ public class PlantService {
 
     public List<PlantResponse> list() {
         return repo.findAll().stream().map(this::toResponse).toList();
+    }
+
+    public PlantResponse update(Long id, PlantUpdateRequest request) {
+        Plant plant = repo.findById(id).orElseThrow(() -> new NotFoundException("Plant not found: " + id));
+
+        plant.setName(request.name());
+        plant.setVariety(request.variety());
+        plant.setPlantedOn(request.plantedOn());
+        plant.setLocation(request.location());
+
+        Plant saved = repo.save(plant);
+
+        return toResponse(saved);
+    }
+
+    public void delete (Long id) {
+        Plant plant = repo.findById(id).orElseThrow(() -> new NotFoundException("Plant not found: " + id));
+        repo.delete(plant);
     }
 
     private PlantResponse toResponse(Plant plant) {
