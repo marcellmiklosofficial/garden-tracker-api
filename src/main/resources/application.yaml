@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: garden-tracker-api
+  datasource:
+    url: jdbc:postgresql://localhost:5432/garden
+    username: garden
+    password: garden
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+
+server:
+  port: 8080
