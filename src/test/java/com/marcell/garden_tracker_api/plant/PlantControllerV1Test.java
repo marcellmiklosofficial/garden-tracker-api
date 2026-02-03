@@ -1,6 +1,7 @@
 package com.marcell.garden_tracker_api.plant;
 
 import com.marcell.garden_tracker_api.common.PostgresContainerTestBase;
+import jakarta.activation.DataSource;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,13 @@ class PlantControllerV1Test extends PostgresContainerTestBase {
     MockMvc mockMvc;
     @Autowired
     ObjectMapper objectMapper;
+    @Autowired
+    DataSource dataSource;
+
+    @Test
+    void printDatasourceUrl() throws Exception {
+        System.out.println("DATASOURCE_URL=" + dataSource.getConnection().getMetaData().getURL());
+    }
 
     @Test
     void createPlant_shouldReturn201() throws Exception {
