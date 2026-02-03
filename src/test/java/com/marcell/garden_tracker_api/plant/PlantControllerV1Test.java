@@ -1,5 +1,6 @@
 package com.marcell.garden_tracker_api.plant;
 
+import com.marcell.garden_tracker_api.common.PostgresContainerTestBase;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,8 +17,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-@ActiveProfiles("test")
-class PlantControllerV1Test {
+class PlantControllerV1Test extends PostgresContainerTestBase {
     @Autowired
     MockMvc mockMvc;
     @Autowired
