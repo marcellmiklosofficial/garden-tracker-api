@@ -29,13 +29,6 @@ class PlantControllerV1Test extends PostgresContainerTestBase {
     MockMvc mockMvc;
     @Autowired
     ObjectMapper objectMapper;
-    @Autowired
-    DataSource dataSource;
-
-    @Test
-    void printDatasourceUrl() throws Exception {
-        System.out.println("DATASOURCE_URL=" + dataSource.getConnection().getMetaData().getURL());
-    }
 
     @Test
     void createPlant_shouldReturn201() throws Exception {
