@@ -10,9 +10,9 @@
 	</parent>
 	<groupId>com.marcell</groupId>
 	<artifactId>garden-tracker-api</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>garden-tracker-api</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Home project for tracking garden plants.</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -45,7 +45,7 @@
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-			<version>2.5.0</version>
+			<version>3.0.1</version>
 		</dependency>
 
 		<dependency>
@@ -91,13 +91,6 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<configuration>
-					<argLine>@{argLine} -javaagent:${org.mockito:mockito-core:jar}</argLine>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
