@@ -1,6 +1,7 @@
 package com.marcell.garden_tracker_api.plant;
 
 import com.marcell.garden_tracker_api.plant.dto.PlantCreateRequest;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.marcell.garden_tracker_api.plant.common.CommonVariables.PLANT_CREATE_REQUEST_V1_TEST_01;
@@ -8,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
+@Tag("unit")
 class PlantServiceTest {
     @Test
     void create_shouldSavePlantAndReturnResponse() {

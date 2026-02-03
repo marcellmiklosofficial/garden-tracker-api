@@ -2,6 +2,7 @@ package com.marcell.garden_tracker_api.plant;
 
 import com.marcell.garden_tracker_api.common.PostgresContainerTestBase;
 import com.marcell.garden_tracker_api.plant.common.CommonVariables;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,6 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
+@Tag("integration")
 class PlantControllerV2Test extends PostgresContainerTestBase {
     @Autowired
     MockMvc mockMvc;
